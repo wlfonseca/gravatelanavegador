@@ -184,7 +184,7 @@ async function entrarNoTeams(page) {
   await page.setExtraHTTPHeaders({ 'Accept-Language': 'en-US,en;q=0.9' });
 
   await page.goto(URL_REUNIAO, { waitUntil: 'domcontentloaded', timeout: 90000 });
-  const inicio = Date.now();
+  let inicio = Date.now();
 
   const ehTeams = /teams\.(microsoft\.com|live\.com|cloud\.microsoft)/.test(URL_REUNIAO);
   if (ehTeams && !(await entrarNoTeams(page))) {
@@ -192,6 +192,7 @@ async function entrarNoTeams(page) {
     await browser.close();
     process.exit(2);
   }
+  inicio = Date.now();
 
   while (Date.now() - inicio < DURACAO_MAX) {
     await espera(5000);

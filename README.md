@@ -107,7 +107,7 @@ docker run --rm --shm-size=1g \
 |---|---|---|
 | `URL` | obrigatória | link da reunião (`teams.microsoft.com`, `teams.live.com` ou `teams.cloud.microsoft`); outra URL só é aberta e gravada por `DURACAO` |
 | `NOME` | `Gravador` | nome exibido aos participantes |
-| `DURACAO` | `3600` | tempo máximo de gravação, em segundos |
+| `DURACAO` | `3600` | tempo máximo dentro da reunião, em segundos, contado a partir da admissão |
 | `ESPERA_LOBBY` | `600` | tempo máximo esperando ser admitido, em segundos |
 | `RES`, `FPS`, `QEMU` | como na versão 2 | |
 
@@ -135,7 +135,7 @@ Testado (2026-10-09), em amd64 e em Hetzner CAX11 (ARM nativo):
 
 - áudio: página tocando 440 Hz gravada com volume médio de −3,6 dB
 - Teams com link inválido: launcher, nome, toggles desligados e "Join now" funcionaram; a falha de conexão foi detectada e o script encerrou
-- **ainda não testado em reunião real**
+- reunião real (2026-10-10, ARM): entrou como convidado, ficou no lobby até ser admitido, e a fala do participante foi gravada (picos de −4 dB); câmera e microfone do bot ficaram desligados
 
 ## Mudar o roteiro de navegação
 
