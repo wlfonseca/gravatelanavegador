@@ -1,3 +1,10 @@
-videos-hetzner/teams/real/
-videos-hetzner/teams/real2/
-videos-hetzner/teams/real3/
+videos/
+videos-hetzner/
+xvfb/videos/
+xvfb/teste-res/
+teams/videos/
+teams/teste-*/
+*.mp4
+*.webm
+*.mp3
+*.png
